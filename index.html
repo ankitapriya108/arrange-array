@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter number"/>
+    <button id="add">Add</button>
+    <button id="sort">Sort</button>
+
+    <script>
+        const input=document.querySelector("input")
+        const add=document.querySelector("#add")
+        const sort=document.querySelector("#sort")
+        const numbers=[""]
+ 
+        add.addEventListener("click",()=>{
+            const minSorted=[...numbers] 
+            const maxSorted=[...numbers]
+            for (let i=0; i < minSorted.length; i++){
+                for(let j=i+1; j < minSorted.length; j++){
+                    if(minSorted[i] > minSorted[j]){
+                        let temp = minSorted[i]
+                        minSorted[i] = minSorted[j]
+                        minSorted[j] = temp 
+                    }
+                }
+            }
+            console.log(minSorted)
+        })
+        add.addEventListener("click",()=>{
+            const minSorted=[...numbers] 
+            const maxSorted=[...numbers]
+            for (let i=0; i < maxSorted.length; i++){
+                for(let j=i+1; j < maxSorted.length; j++){
+                    if(minSorted[i] > maxSorted[j]){
+                        let temp = maxSorted[i]
+                        maxSorted[i] = maxSorted[j]
+                        maxSorted[j] = temp 
+                    }
+                }
+            }
+            console.log(maxSorted)
+        })
+
+      
+       
+       
+
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
